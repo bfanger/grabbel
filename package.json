@@ -3,19 +3,19 @@
   "version": "0.0.1",
   "description": "A random collection of utilities",
   "license": "MIT",
-  "module": "dist/index.js",
+  "type": "module",
   "scripts": {
-    "dev": "tsc --watch",
-    "build": "rimraf dist && tsc",
-    "postbuild": "terser-folder dist -e -x=.js -o=dist && prettier --loglevel=warn --write dist",
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit package",
     "lint": "prettier --check --loglevel=warn src",
-    "format": "prettier --write src",
-    "prepublish": "npm run build"
+    "format": "prettier --write src"
   },
   "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@sveltejs/kit": "next",
     "prettier": "^2.5.1",
-    "rimraf": "^3.0.2",
-    "terser-folder": "^2.0.0",
+    "svelte": "^3.46.4",
+    "svelte2tsx": "^0.5.5",
     "typescript": "^4.5.5"
   }
 }
